@@ -10,3 +10,12 @@ def calculate_sharpness(frame):
     laplacian = cv2.Laplacian(gray, cv2.CV_64F)
     sharpness = laplacian.var()
     return sharpness
+
+def calculate_brightness(frame):
+    """
+    Tính độ sáng trung bình của ảnh grayscale.
+    """
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    brightness = gray.mean()
+    return brightness
+
